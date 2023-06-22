@@ -26,6 +26,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
 /**
  * struct bus_s - variables -args, file, line content
  * @arg: value
@@ -42,6 +43,7 @@ typedef struct bus_s
 	int lifi;
 }  bus_t;
 extern bus_t bus;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
