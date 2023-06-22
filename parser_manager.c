@@ -29,7 +29,7 @@ int is_number(char *s)
  *
  * Return: EXIT_SUCCESS or EXIT_FAILURE
 */
-int parse_line(char *line, stack_t **stack)
+int parse_line(char *line, stack_t **stack, unsigned int line_number)
 {
 	instruction_t instructions[] = {
 		{"push", push},
@@ -58,5 +58,6 @@ int parse_line(char *line, stack_t **stack)
 		}
 	}
 
-	return (1);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
+	return (EXIT_SUCCESS);
 }

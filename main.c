@@ -32,9 +32,8 @@ int main(int argc, char *argv[])
 	while (fgets(buffer, MAX_LINE_LEN, file) != NULL)
 	{
 		line_number++;
-		if (parse_line(buffer, &stack) == -1)
+		if (parse_line(buffer, &stack, line_number) == -1)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, buffer);
 			free_stack(stack);
 			fclose(file);
 			exit(EXIT_FAILURE);
@@ -43,5 +42,5 @@ int main(int argc, char *argv[])
 
 	free_stack(stack);
 	fclose(file);
-	return (0);
+	return (EXIT_SUCCESS);
 }

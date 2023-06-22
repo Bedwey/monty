@@ -41,7 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 int main(int argc, char *argv[]);
-int parse_line(char *line, stack_t **stack);
+int parse_line(char *line, stack_t **stack, unsigned int line_number);
 int is_number(char *s);
 void free_stack(stack_t *stack);
 
